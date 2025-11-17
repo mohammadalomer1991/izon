@@ -7,6 +7,7 @@ interface ECSStackProps extends StackProps{
     stage: Stage;
 }
 
+//ECS stack
 class ECSStack  extends  Stack{
     constructor(scope:Construct,id:string,props:ECSStackProps){
         super(scope,id,props)
