@@ -1,0 +1,8 @@
+services:
+  app:
+    container_name: sss
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
