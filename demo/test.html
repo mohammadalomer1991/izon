@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digit 2 Animation</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+  }
+
+  .digit {
+    position: relative;
+    width: 120px;
+    height: 200px;
+  }
+
+  /* Common styles for all segments */
+  .segment {
+    position: absolute;
+    background-color: #555; /* off state */
+    transition: background-color 0.3s;
+  }
+
+  /* Horizontal segments */
+  .segment.horizontal {
+    width: 80px;
+    height: 20px;
+    left: 20px;
+  }
+
+  /* Vertical segments */
+  .segment.vertical {
+    width: 20px;
+    height: 80px;
+  }
+
+  /* Positioning segments a-g */
+  .a { top: 0; }
+  .b { top: 0; right: 0; }
+  .c { bottom: 0; right: 0; }
+  .d { bottom: 0; left: 20px; }
+  .e { bottom: 0; left: 0; }
+  .f { top: 0; left: 0; }
+  .g { top: 90px; }
+
+  /* Animations to light up */
+  .on {
+    animation: lightUp 0.5s forwards;
+  }
+
+  .a.on { animation-delay: 0s; }
+  .b.on { animation-delay: 0.5s; }
+  .g.on { animation-delay: 1s; }
+  .e.on { animation-delay: 1.5s; }
+  .d.on { animation-delay: 2s; }
+
+  @keyframes lightUp {
+    from { background-color: #555; }
+    to   { background-color: red; }
+  }
+</style>
+</head>
+<body>
+
+<div class="digit">
+  <div class="segment horizontal a on"></div>
+  <div class="segment vertical b on"></div>
+  <div class="segment vertical c"></div> <!-- not used in 2 -->
+  <div class="segment horizontal d on"></div>
+  <div class="segment vertical e on"></div>
+  <div class="segment vertical f"></div> <!-- not used in 2 -->
+  <div class="segment horizontal g on"></div>
+</div>
+
+</body>
+</html>

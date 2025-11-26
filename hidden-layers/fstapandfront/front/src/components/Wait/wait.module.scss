@@ -1,0 +1,29 @@
+.overlay-load{
+    
+    visibility: hidden;
+    background-color: rgb(223, 216, 216);
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 999;
+    align-content: center;
+    justify-items: center;
+    &_load{
+            width: 60px;
+            height: 60px;
+            border: solid 10px green;
+            border-radius: 50%;
+            border-top: 10px solid blue;
+            animation-name: waiting_spinner;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+    }
+    
+}
+@keyframes waiting_spinner {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+        
+}

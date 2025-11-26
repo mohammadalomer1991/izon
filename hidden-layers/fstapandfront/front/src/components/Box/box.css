@@ -1,0 +1,7 @@
+.c-box{
+    width: 60px;
+    height: 60px;
+    background-color: bisque;
+    transform: rotate(30deg) translate(20px);
+    transition: transform 0.5s ease; /* animate transform changes */
+}
