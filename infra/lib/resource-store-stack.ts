@@ -12,5 +12,14 @@ export class ResourceStoreStack extends Stack{
 				emptyOnDelete: true,
 				imageScanOnPush: true,
         });
+
+        repository.addLifecycleRule({
+			rulePriority: 2,
+			description: "Remove untagged images",
+			tagStatus: ecr.TagStatus.UNTAGGED,
+			maxImageAge: cdk.Duration.days(1), // 保持期間を1日に設定
+		});
     }
 }
+
+//00
